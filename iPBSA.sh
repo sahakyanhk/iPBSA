@@ -1,13 +1,10 @@
 #!/bin/bash
 
-
 mkdir inp parm min gbsa pbsa
 cp rec.pdb parm
 
-
 #set the number of cores
 N=8
-
 
 cat > ./inp/xtleap.in <<EOF
 source leaprc.protein.ff14SB
