@@ -199,7 +199,7 @@ done
 cd ..
 
 
-#process PBSA/GBSA results
+#processing
 rm GBSA.dat FINAL_GBSA.dat
 for lig in ./mols/*.pdb
 do
@@ -210,7 +210,7 @@ done
 sort -V rawGBSA.csv > GBSA.csv
 grep ',[-][0-9]' GBSA.csv > FINAL_GBSA.csv
 
-#pbsa
+#PBSA
 cd  pbsa
 (
 for lig in ../mols/*.pdb
@@ -231,7 +231,7 @@ done
 )
 cd ..
 
-#process PBSA/pbsa results
+#processing
 rm pbsa.dat FINAL_pbsa.dat
 for lig in ./mols/*.pdb
 do
