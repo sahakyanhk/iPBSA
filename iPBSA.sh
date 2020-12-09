@@ -236,7 +236,7 @@ rm pbsa.dat FINAL_pbsa.dat
 for lig in ./mols/*.pdb
 do
     mol=`basename $lig .pdb`
-    GB=`awk '/DELTA TOTAL/,EOF' gbsa/en_pre-frames_${mol}.dat | awk -F ',' '{print $NF}'| sort -n | head -n 1`
+    GB=`awk '/DELTA TOTAL/,EOF' pbsa/en_pre-frames_${mol}.dat | awk -F ',' '{print $NF}'| sort -n | head -n 1`
     echo $mol,$GB >> rawPBSA.csv
 done
 sort -V rawPBSA.csv > PBSA.csv
