@@ -221,7 +221,7 @@ do
     ((i=i%N)); ((i++==0)) && wait
     MMPBSA.py -O -i ../../inp/pbsa.in \
         -o  ../FINAL_RESULTS_pbsa_${mol}.dat \
-        -eo en_for_frames.dat \
+        -eo ../en_pre-frames_${mol}.dat \
         -cp ../../parm/complex_${mol}.prmtop \
         -rp ../../parm/protein.prmtop \
         -lp ../../parm/${mol}.prmtop \
