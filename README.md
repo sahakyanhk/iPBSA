@@ -1,5 +1,7 @@
 # iPBSA is a script for docking results rescoring
 !!! This is a beta version for reviewers, after manuscript revision, the major version will be realized. !!!
+
+
 To use this script you need to have a receptor and ligands in their docked conformations in the PDB format with the following names and folders:
 
 $DIR/iPDBS.sh    
