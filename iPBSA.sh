@@ -44,12 +44,14 @@ cat > ./inp/min.in <<EOF
 Initial minimisation of rec-lig complex
 &cntrl
 imin=1, 
-maxcyc=1500, ncyc=500,
-cut=16, ntb=0, igb=8,
-ntpr=100,
-ntwx=100,
-ntwr=-100
+maxcyc=2500, ncyc=100,
+cut=16, ntb=0, igb=0,
+ntpr=500,
+ntwx=500,
+ntwr=500
 drms=0.01
+ibelly=1,
+bellymask=':UNL <@5'
 &end
 EOF
 
@@ -211,15 +213,15 @@ cd ..
 
 
 #processing
-rm GBSA.dat FINAL_GBSA.dat
+rm GBSA.dat rawGBSA FINAL_GBSA.dat
 for lig in ./mols/*.pdb
 do
     mol=`basename $lig .pdb`
-    GB=`awk '/DELTA TOTAL/,EOF' gbsa/en_pre-frames_${mol}.dat | awk -F ',' '{print $NF}'| sort -n | head -n 1`
-    echo $mol,$GB >> rawGBSA.csv
+    GB=`sed -e '1,/DELTA TOTAL/d' gbsa/en_pre-frames_${mol}.dat | awk -F ',' '{print $NF}'|  head -n 1`
+    echo $mol $GB >> rawGBSA.dat
 done
-sort -V rawGBSA.csv > GBSA.csv
-grep ',[-][0-9]' GBSA.csv > FINAL_GBSA.csv
+sort -V rawGBSA.dat > GBSA.dat
+grep ' ' GBSA.dat > FINAL_GBSA.dat
 
 #PBSA
 cd  pbsa
@@ -243,14 +245,14 @@ done
 cd ..
 
 #processing
-rm pbsa.dat FINAL_pbsa.dat
+rm rawPBSA.dat rawPBSA.dat PBSA.dat
 for lig in ./mols/*.pdb
 do
     mol=`basename $lig .pdb`
-    GB=`awk '/DELTA TOTAL/,EOF' pbsa/en_pre-frames_${mol}.dat | awk -F ',' '{print $NF}'| sort -n | head -n 1`
-    echo $mol,$GB >> rawPBSA.csv
+    PB=`sed -e '1,/DELTA TOTAL/d' pbsa/en_pre-frames_${mol}.dat | awk -F ',' '{print $NF}' | head -n 1`
+    echo $mol $PB >> rawPBSA.dat
 done
-sort -V rawPBSA.csv > PBSA.csv
-grep ',[-][0-9]' PBSA.csv > FINAL_PBSA.csv
+sort -V rawPBSA.dat > PBSA.dat
+grep ' ' PBSA.dat > rawPBSA.dat
 
 
