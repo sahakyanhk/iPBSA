@@ -77,7 +77,7 @@ verbose=2, keep_files=0, netcdf=1,
 strip_mask = ":WAT,Cl-,Na+,K+",
 /
 &gb
-igb=8
+igb=2,
 saltcon=0.150,
 /
 EOF
