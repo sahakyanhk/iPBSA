@@ -5,7 +5,7 @@ iPBSA minimizes docked receptor-ligand conformations in implicit solvent and cal
 Usage: ./iPBSA.sh -r {.pdb} -l {dir} -n int -c bcc|gas
 	
 -r receptor file in pdb format  
--l path to the directory with small molecules (ligands shoud be in pdb format with added hydrogens)  
+-l path to the directory with small molecules (ligands should be in pdb format with added hydrogens)  
 -n number of parallel threads (defolt is 8)  
 -c charge method BCC (defolt) or GAS  
 
