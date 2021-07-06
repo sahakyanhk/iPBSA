@@ -10,8 +10,8 @@ display_help() {
     echo -e "\niPBSA is a script for docking results rescoring"
     echo -e "\nUsage: ./iPBSA.sh -r <.pdb> -m <dir> -n <int> -c <bcc/gas> \n"
     echo "-r receptor file in pdb format"
-    echo "-l path to the directory with ligands"
-    echo "-n nukber of parallel threads (defolt is 8)" 
+    echo "-l path to the directory with small molecules (ligands should be in pdb format with added hydrogens)"
+    echo "-n number of parallel threads (defolt is 8)" 
     echo -e "-c charge method BCC (defolt) or GAS \n"
 }
 
