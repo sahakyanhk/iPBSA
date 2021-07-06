@@ -3,7 +3,7 @@
 
 display_usage() {
     echo -e "\niPBSA is a script for docking results rescoring"
-    echo -e "\nUsage: ./iPBSA.sh -r <.pdb> -l <dir> -n <int> -c <bcc/gas> \n"
+    echo -e "\nUsage: ./iPBSA.sh -r {.pdb} -l {dir} -n int -c bcc|gas \n"
 }
 
 display_help() {
