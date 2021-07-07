@@ -6,8 +6,8 @@ Usage: ./iPBSA.sh -r {.pdb} -l {dir} -n int -c bcc|gas
 	
 -r receptor file in pdb format  
 -l path to the directory with small molecules (ligands should be in pdb format with added hydrogens)  
--n number of parallel threads (defolt is 8)  
--c charge method BCC (defolt) or GAS  
+-n number of parallel threads (default is 8)  
+-c charge method BCC (default) or GAS  
 
 
 For more details about iPBSA, please see [Improving virtual screening results with MM/GBSA and MM/PBSA rescoring](https://link.springer.com/article/10.1007/s10822-021-00389-3)  
