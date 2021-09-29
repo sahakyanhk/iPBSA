@@ -5,11 +5,6 @@
 
 display_usage() {
     echo -e "\niPBSA is a script for docking results rescoring"
-    echo -e "\nUsage: ./iPBSA.sh -r {.pdb} -l {dir} -n int -c bcc|gas \n"
-}
-
-display_help() {
-    echo -e "\niPBSA is a script for docking results rescoring"
     echo -e "\nUsage: ./iPBSA.sh -r <.pdb> -m <dir> -n <int> -c <bcc/gas> \n"
     echo "-r receptor file in pdb format"
     echo "-l path to the directory with small molecules (ligands should be in pdb format with added hydrogens)"
@@ -23,11 +18,6 @@ then
     exit 1
 fi
 
-if [[ ( $# == "--help")  ||  $# == "-h" ]]
-then
-    display_help
-    exit 0
-fi
 
 charge=bcc
 N=8
@@ -216,7 +206,7 @@ rm  rawGBSA.dat FINAL_GBSA.dat
 for lig in ./$mols/*.pdb
 do
     mol=`basename $lig .pdb`
-    GB=`sed -e '1,/DELTA TOTAL/d' gbsa/en_pre-frames_$mol.dat | awk -F ',' '{print $NF}'|  head -n 1`
+    GB=`sed -e '1,/DELTA TOTAL/d' gbsa/en_pre-frames_${mol}.dat | awk -F ',' '{print $NF}'|  head -n 1`
     echo $mol $GB >> rawGBSA.dat
 done
 sort -V rawGBSA.dat | grep ' ' > FINAL_GBSA.dat
@@ -247,7 +237,7 @@ rm rawPBSA.dat rawPBSA.dat PBSA.dat
 for lig in ./$mols/*.pdb
 do
     mol=`basename $lig .pdb`
-    PB=`sed -e '1,/DELTA TOTAL/d' pbsa/en_pre-frames_$mol.dat | awk -F ',' '{print $NF}' | head -n 1`
+    PB=`sed -e '1,/DELTA TOTAL/d' pbsa/en_pre-frames_${mol}.dat | awk -F ',' '{print $NF}' | head -n 1`
     echo $mol $PB >> rawPBSA.dat
 done
 sort -V rawPBSA.dat | grep ' '  > FINAL_PBSA.dat
