@@ -3,6 +3,8 @@
 #The algorithm is based on a freely-available [AmberTools18](https://ambermd.org/AmberTools.php) which can be easily installed via conda  
 #For more details about iPBSA, please see https://link.springer.com/article/10.1007/s10822-021-00389-3
 
+set -e
+
 display_usage() {
     echo -e "\niPBSA is a script for docking results rescoring"
     echo -e "\nUsage: ./iPBSA.sh -r <.pdb> -m <dir> -n <int> -c <bcc/gas> \n"
