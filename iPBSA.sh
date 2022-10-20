@@ -35,7 +35,7 @@ do
 done
 
 mkdir inp parm min gbsa pbsa
-cp $receptor parm/rec.pdb
+pdb4amber -i $receptor -o parm/rec.pdb --nohyd --dry
 
 #set the number of cores
 N=$N_thr
