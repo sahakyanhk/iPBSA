@@ -1,0 +1,7 @@
+how to run
+
+#CORE
+./iPBSA.sh -r 5t2p.pdb  -l lig_dir/ -c bcc -n 8 -o test_out
+
+#KITH
+./iPBSA.sh -r 2b8t-A.pdb  -l ligands/ -n 10 -c bcc -o test_out
