@@ -1,5 +1,3 @@
-how to run
-
 #CORE
 ./iPBSA.sh -r 5t2p.pdb  -l lig_dir/ -c bcc -n 8 -o test_out
 
