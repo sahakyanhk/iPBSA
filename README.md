@@ -2,7 +2,7 @@
 
 iPBSA is a script for docking results rescoring, it minimizes docked receptor-ligand conformations in implicit solvent and calculates the binding free energy with MM/PB(GB)SA methods. The algorithm is based on a freely-available [AmberTools](https://ambermd.org/AmberTools.php) which can be easily installed via conda  
 
-**Usage** ./iPBSA.sh -r <.pdb> -l <lig dir> -n <int> -c <bcc/gas> -o <output dir>
+**Usage** ./iPBSA.sh -r <.pdb> -l <lig dir> -o <output dir>  -n <int> -c <bcc/gas> 
 	
 -r receptor file in pdb format  
 -l path to the directory with small molecules (ligands should be in pdb format with added hydrogens)  
