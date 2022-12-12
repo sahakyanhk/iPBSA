@@ -1,7 +1,6 @@
-```console
 wget https://github.com/sahakyanhk/iPBSA/archive/refs/heads/main.zip; unzip main.zip; chmod +x iPBSA-main/iPBSA.sh; export PATH=$(pwd)/iPBSA-main/:$PATH
 iPBSA.sh
-```
+
 cd iPBSA-main/examples
 
 #KITH
