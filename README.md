@@ -13,8 +13,8 @@ iPBSA.sh
 	
 -r receptor file in pdb format  
 -l path to the directory with small molecules (ligands should be in pdb format with added hydrogens)  
--n number of parallel threads (The number of threads must not excead the number of ligands)  
--o output directory  
+-n number of parallel threads 
 -c charge method BCC (defolt) or GAS  
+-o output directory  
 
 For more details, please see [**Improving virtual screening results with MM/GBSA and MM/PBSA rescoring**](https://link.springer.com/article/10.1007/s10822-021-00389-3)  
