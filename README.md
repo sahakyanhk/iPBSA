@@ -17,4 +17,4 @@ iPBSA.sh
 -o output directory  
 -c charge method BCC (defolt) or GAS  
 
-For more details about iPBSA, please see [**Improving virtual screening results with MM/GBSA and MM/PBSA rescoring**](https://link.springer.com/article/10.1007/s10822-021-00389-3)  
+For more details, please see [**Improving virtual screening results with MM/GBSA and MM/PBSA rescoring**](https://link.springer.com/article/10.1007/s10822-021-00389-3)  
