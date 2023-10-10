@@ -1,9 +1,8 @@
 #!/bin/bash
 #iPBSA minimizes docked receptor-ligand conformations in implicit solvent and calculates the binding free energy with MM/PB(GB)SA methods. 
-#The algorithm is based on a freely-available [AmberTools](https://ambermd.org/AmberTools.php) which can be easily installed via conda  
-#For more details about iPBSA, please see https://link.springer.com/article/10.1007/s10822-021-00389-3
+#The algorithm is based on AmberTools which can be installed via conda (https://ambermd.org/AmberTools.php)  
+#For more details please see https://link.springer.com/article/10.1007/s10822-021-00389-3
 
-#set -e
 
 display_usage() {
     echo -e "\niPBSA is a script for docking results rescoring"
@@ -20,7 +19,6 @@ then
     display_usage
     exit 1
 fi
-
 
 charge=bcc
 N=4
@@ -219,10 +217,7 @@ date
 wait
 date
 ) > ../gbsa.log
-
-
 cd ..
-
 
 #PBSA
 echo "running mmpbsa..."
@@ -251,9 +246,6 @@ date
 wait
 date
 ) > ../pbsa.log
-
-
-
 cd ..
 
 
